@@ -16,7 +16,7 @@ namespace TDDKata
                 }
 
                 int sum = 0;
-                string[] values = s.Split(',');
+                string[] values = s.Split(',','\n');
 
                 foreach (var value in values)
                 {

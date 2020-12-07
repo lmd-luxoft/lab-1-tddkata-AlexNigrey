@@ -64,5 +64,27 @@ namespace TDDKata
             Assert.AreEqual(actual, expected);
         }
 
+        [Test]
+        public void NewStringSumTest()
+        {
+            StringCalc calc = new StringCalc();
+            string op = "1" + "\n" + "2";
+            int expected = 3;
+            int actual = calc.Sum(op);
+
+            Assert.AreEqual(actual, expected);
+        }
+
+        [Test]
+        public void DoubleSeparatorSumTest()
+        {
+            StringCalc calc = new StringCalc();
+            string op = "1," + "\n" + "2";
+            int expected = -1;
+            int actual = calc.Sum(op);
+
+            Assert.AreEqual(actual, expected);
+        }
+
     }
 }
