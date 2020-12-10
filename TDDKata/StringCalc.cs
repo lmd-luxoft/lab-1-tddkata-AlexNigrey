@@ -22,7 +22,7 @@ namespace TDDKata
                 {
                     if (int.TryParse(value, out var number))
                     {
-                        sum += number;
+                        sum += (number <= 1000)? number : 0;
                     }
                     else
                     {
