@@ -129,5 +129,16 @@ namespace TDDKata
 
             Assert.AreEqual(actual, expected);
         }
+
+        [Test]
+        public void ThousandSumTest()
+        {
+            StringCalc calc = new StringCalc();
+            string op = "1002,2";
+            int expected = 2;
+            int actual = calc.Sum(op);
+
+            Assert.AreEqual(actual, expected);
+        }
     }
 }
