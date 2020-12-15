@@ -10,11 +10,8 @@ namespace TDDKata
         {
             if (input != null)
             {
-
                 if (input.Length == 0)
-                {
                     return 0;
-                }
 
                 int sum = 0;
                 string[] values = GetSplitedString(input);
@@ -50,6 +47,5 @@ namespace TDDKata
 
             return input.Split(splitedChars, StringSplitOptions.None);
         }
-
     }
 }
