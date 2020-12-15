@@ -1,22 +1,23 @@
 ﻿// NUnit 3 tests
 // See documentation : https://github.com/nunit/docs/wiki/NUnit-Documentation
+using System;
 
 namespace TDDKata
 {
     internal class StringCalc
     {
-        internal int Sum(string s)
+        internal int Sum(string input)
         {
-            if (s != null)
+            if (input != null)
             {
 
-                if (s.Length == 0)
+                if (input.Length == 0)
                 {
                     return 0;
                 }
 
                 int sum = 0;
-                string[] values = s.Split(',','\n');
+                string[] values = GetSplitedString(input);
 
                 foreach (var value in values)
                 {
@@ -35,5 +36,20 @@ namespace TDDKata
 
             return -1;
         }
+
+        private string[] GetSplitedString(string input)
+        {
+            string[] splitedChars = new string[] { ",", "\n" };
+
+            if (input.StartsWith("//") && input[3] == '\n')
+            {
+                var splitedChar = input[2].ToString();
+                splitedChars = new string[] { splitedChar };
+                input = input.Substring(4);
+            }
+
+            return input.Split(splitedChars, StringSplitOptions.None);
+        }
+
     }
 }
